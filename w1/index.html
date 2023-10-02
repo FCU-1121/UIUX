@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+  function showBMI() {
+    let pname = document.forms["bmi"]["pname"].value;
+    let h = parseFloat(document.forms["bmi"]["height"].value);
+    let w = parseFloat(document.forms["bmi"]["weight"].value);
+    bmi = w/(h*h);
+    bmi = bmi.toFixed(2);
+
+    newBMIstr = "<br>" + pname + ": " + bmi.toString();
+    document.getElementById("p-all").innerHTML += newBMIstr;    
+
+    if (bmi > 25) {
+      document.getElementById("p-over-w").innerHTML += newBMIstr;
+    }
+    if (bmi < 18.5) {
+      document.getElementById("p-under-w").innerHTML += newBMIstr;
+    }
+
+  }
+</script>
+
+<h2>BMI System</h2>
+
+<p>Please input and submit the Name, Weight and Height</p>
+
+
+<form name="bmi">
+  <label for="pname">Name:</label>
+  <input type="text" id="pname" name="pname" value=""><br>
+
+  <label for="weight">Weight(kg):</label>
+  <input type="text" id="weight" name="weight" value="50"><br>
+  
+  <label for="height">Height(m):</label>
+  <input type="text" id="height" name="height" value="1.5"><br><br>
+  <input type="Button" value="Submit" onclick="showBMI()">
+</form> 
+
+
+
+<p id="p-over-w">Over Weight: </p>
+
+<p id="p-under-w">Under Weight: </p>
+
+<p id="p-all">All person: </p>
+
+</body>
+
+</html>
