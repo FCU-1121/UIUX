@@ -4,6 +4,8 @@ let weight = 0, height = 0;
 
 let alert_message = document.querySelector('.alert-message');
 let bmi_number = document.querySelector('.bmi-number');
+const result_container = document.querySelector('.result-container');
+const record_container = document.querySelector('.record-container')
 
 let person_list = ""; // string type to innerHTML
 let all_person = document.querySelector('.all-person');
@@ -56,18 +58,22 @@ function showBMI() {
   alert_message.innerHTML = `<p>${message[idx][0]}</p>`;
   alert_message.style.backgroundColor = message[idx][1];
 
+  document.querySelector(".result-container #result_name").innerHTML = name + " 結果";
+
   let person_info = `<li><div class="username">${name}</div><div class="bmi-value">${bmi}</div><div class="alert-message" style="background-color:${message[idx][1]}">${message[idx][0]}</div></li>`;
   person_list = person_info + person_list;
 
-  all_person.innerHTML = "<p>All person</p>" + person_list;
+  all_person.innerHTML = "<p>歷史紀錄</p>" + person_list;
   
   weight = weight_result.innerHTML = 0;
   height = height_result.innerHTML = 0;
-  
-  // 初始化
+
+  // 重置
   generateheight();
   generateweight();
   document.querySelector('#pname').value = "";
+
+  result_container.setAttribute("style", "display:flex");
 
   return;
 }
@@ -90,21 +96,21 @@ for(let i = 0; i < 3; i++) {
 
 
 function generateweight() {
-  let options = "<option value=0>百位</option>";
+  let options = "<option value=0>0</option>";
   let idx = 0;
-  for(let value = 0; value <= 5; value++) {
+  for(let value = 1; value <= 5; value++) {
       const option = `<option value='${value}'>${value}</option>`;
       options += option;
   }
   weight_select_container[idx++].innerHTML = options;
-  options = "<option value=0>十位</option>";
-  for(let value = 0; value <= 9; value++) {
+  options = "<option value=0>0</option>";
+  for(let value = 1; value <= 9; value++) {
     const option = `<option value='${value}'>${value}</option>`;
     options += option;
   }
   weight_select_container[idx++].innerHTML = options;
-  options = "<option value=0>個位</option>";
-  for(let value = 0; value <= 9; value++) {
+  options = "<option value=0>0</option>";
+  for(let value = 1; value <= 9; value++) {
     const option = `<option value='${value}'>${value}</option>`;
     options += option;
   }
@@ -114,21 +120,21 @@ function generateweight() {
 
 
 function generateheight() {
-  let options = "<option value=0>百位</option>";
+  let options = "<option value=0>0</option>";
   let idx = 0;
-  for(let value = 0; value <= 2; value++) {
+  for(let value = 1; value <= 2; value++) {
       const option = `<option value='${value}'>${value}</option>`;
       options += option;
   }
   height_select_container[idx++].innerHTML = options;
-  options = "<option value=0>十位</option>";
-  for(let value = 0; value <= 9; value++) {
+  options = "<option value=0>0</option>";
+  for(let value = 1; value <= 9; value++) {
     const option = `<option value='${value}'>${value}</option>`;
     options += option;
   }
   height_select_container[idx++].innerHTML = options;
-  options = "<option value=0>個位</option>";
-  for(let value = 0; value <= 9; value++) {
+  options = "<option value=0>0</option>";
+  for(let value = 1; value <= 9; value++) {
     const option = `<option value='${value}'>${value}</option>`;
     options += option;
   }
