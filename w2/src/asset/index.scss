@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap");
+$font-color: #000000;
+$username-color: rgba(154, 154, 154, 0.771);
+
+:root {
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100vw;
+    font-family: "Montserrat", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
+    color: $font-color;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+
+@mixin centering() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.786); /* 調整透明度 */
+}
+
+.container {
+    width: 80vw;
+    height: auto;
+    min-height: 60vh;
+    background: rgba(178, 178, 178, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* 調整模糊值 */
+    padding: 30px;
+    border-radius: 10px;
+
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .input-container {
+        flex: .55;
+        width: 50%;
+        height: auto;
+        margin-top: 20px;
+
+        .result-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .bmi-number {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100px;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: bisque;
+            }
+    
+            .alert-message {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100px;
+                border-radius: 10px;
+                padding: 10px;
+            }
+        }
+
+        form {
+            width: 100%;
+            height: auto;
+            background-color: grey;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-size: 18px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            input {
+                width: 200px;
+                height: 35px;
+                border-radius: 10px;
+                padding: 5px;
+                font-size: 18px;
+            }
+
+            p {
+                padding: 6px;
+                background-color: rgb(197, 178, 136);
+                border-radius: 10px;
+            }
+
+            .value-container {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                
+
+                .select {
+                    flex: .5;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    .obj {
+                        select {
+                            width: 50px;
+                            height: 30px;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+
+                .res {
+                    width: 70px;
+                    height: 70px;
+                    background-color: bisque;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 16px;
+                }
+            
+            }
+
+            .submit {
+                cursor: pointer;
+            }
+
+        }
+
+    }
+
+
+    .all-person { // ul
+        flex: .3;
+        height: 60vh;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        p {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            width: fit-content;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 5px 0;
+
+            .username {
+                width: 200px;
+                height: 50px;
+                padding: 10px;
+                border-radius: 10px 0 0 10px;
+                background-color: $username-color;
+                @include centering();
+            }
+
+            .bmi-value {
+                width: 60px;
+                height: 50px;
+                padding: 10px;
+                background-color: bisque;
+                @include centering();
+            }
+
+            .alert-message {
+                width: 60px;
+                height:  50px;
+                padding: 10px;
+                border-radius: 0 10px 10px 0;
+                @include centering();
+            }
+        }
+
+    }
+
+}

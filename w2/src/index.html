@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./asset/index.css" />
+    <title>Bmi Calculator</title>
+  </head>
+  <body>
+    <h2>BMI System</h2>
+    <div class="container">
+      <div class="input-container">
+        <div class="result-container">
+          <div class="bmi-number"></div>
+          <div class="alert-message"></div>
+        </div>
+
+        <form name="bmi">
+          <input
+            type="text"
+            id="pname"
+            name="pname"
+            value=""
+            required
+            placeholder="Your Name"
+          /><br />
+
+          <p>Weight(kg)</p>
+          <div class="value-container">
+            <div class="select">
+              <label for="weight0" class="obj">
+                <select name="weight" id="weight0">
+                  <option value="None">百位</option>
+                </select> </label
+              ><br />
+
+              <label for="weight1" class="obj">
+                <select name="weight" id="weight1">
+                  <option value="None">十位</option>
+                </select> </label
+              ><br />
+
+              <label for="weight2" class="obj">
+                <select name="weight" id="weight2">
+                  <option value="None">個位</option>
+                </select> </label
+              ><br />
+            </div>
+
+            <div id="weight-result" class="res"></div>
+          </div>
+
+          <p>Height(cm)</p>
+          <div class="value-container">
+            <div class="select">
+              <label for="height0" class="obj">
+                <select name="height" id="height0">
+                  <option value="None">百位</option>
+                </select> </label
+              ><br />
+              <label for="height1" class="obj">
+                <select name="height" id="height1">
+                  <option value="None">十位</option>
+                </select> </label
+              ><br />
+              <label for="height2" class="obj">
+                <select name="height" id="height2">
+                  <option value="None">個位</option>
+                </select> </label
+              ><br />
+            </div>
+            <div id="height-result" class="res"></div>
+          </div>
+
+          <input
+            type="Button"
+            value="Submit"
+            onclick="showBMI()"
+            class="submit"
+          />
+        </form>
+      </div>
+
+      <ul class="all-person">
+        <p>All person</p>
+        <!-- <li>
+        <div class="username"></div>
+        <div class="bmi-value"></div>
+        <div class="alert-message"></div>
+      </li>     -->
+      </ul>
+    </div>
+  </body>
+  <script src="./js/index.js"></script>
+</html>
