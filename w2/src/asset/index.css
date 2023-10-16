@@ -105,7 +105,7 @@ body {
   cursor: pointer;
   margin-top: 20px;
   font-weight: bolder;
-  color: red;
+  color: #000000;
 }
 .container .input-container form .submit:hover {
   transform: scale(1.05);
