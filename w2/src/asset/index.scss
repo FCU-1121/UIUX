@@ -39,8 +39,7 @@ body {
 .container {
     min-width: 200px;
     width: auto;
-    height: auto;
-    min-height: 60vh;
+    height: 65vh;
     background: rgba(178, 178, 178, 0.8);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); /* 調整模糊值 */
@@ -141,48 +140,66 @@ body {
     }
 
     .result-container {
-        width: 100%;
-        height: auto;
+        flex: .45;
+        height: 100%;
         display: none;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         animation: fadein .8s ease-in;
-
-        p {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .bmi-number {
+        
+        .cur-result {
+            flex: .4;
+            width: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 200px;
-            height: 50px;
-            border-radius: 10px;
-            background-color: bisque;
-            margin: 10px;
-            font-weight: bold;
-            font-size: larger;
-        }
+            position: relative;
+            top: 10px;
 
-        .alert-message {
-            width: 200px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 10px;
-            font-weight: bold;
-            font-size: larger;
+
+            p {
+                font-size: 18px;
+                font-weight: 600;
+            }
+    
+            .bmi-number {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                height: 50px;
+                border-radius: 10px;
+                background-color: bisque;
+                margin: 10px;
+                font-weight: bold;
+                font-size: larger;
+            }
+    
+            .alert-message {
+                width: 200px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin: 10px;
+                font-weight: bold;
+                font-size: larger;
+                
+            }
         }
+        
 
         .all-person { // ul
-            flex: .3;
-            height: 60vh;
+            flex: .6;
+            height: 60%;
+            overflow-y: scroll;
             margin: 20px;
+            padding: 10px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            // border: bisque 1.5px solid;
             list-style-type: none;
             display: flex;
             flex-direction: column;
@@ -244,3 +261,4 @@ body {
         opacity: 1;
     }
 }
+
